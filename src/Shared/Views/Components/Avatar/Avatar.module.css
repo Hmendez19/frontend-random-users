@@ -1,0 +1,41 @@
+
+.avatar{
+    border-style: solid;
+    border-width: 2px;
+    background: #454545;
+    border-color: #454545;
+}
+
+.avatar__img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.avatar--large{
+    width: 160px;
+    height: 160px;
+}
+
+.avatar__img--large{
+    clip-path: circle(72px);
+}
+
+.avatar--small{
+    width: 80px;
+    height: 80px;
+}
+
+.avatar__img--small{
+    clip-path: circle(36px);
+    -webkit-clip-path:circle(36px);
+}
+
+.avatar--tiny{
+    width: 42px;
+    height: 42px;
+}
+
+.avatar__img--tiny{
+    clip-path: circle(20px);
+}
