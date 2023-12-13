@@ -1,0 +1,1 @@
+export const GetApiUrl = (limit:number=1) => `https://randomuser.me/api/?results=${limit}`
