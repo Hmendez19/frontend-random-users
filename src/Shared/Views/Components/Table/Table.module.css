@@ -1,0 +1,29 @@
+:root {
+    --sky-color: #5FA4F8;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+
+.table--hover tbody tr:hover {
+    background-color: var(--sky-color);
+}
+
+.table--striped tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+.table th {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.table td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 18px;
+}
