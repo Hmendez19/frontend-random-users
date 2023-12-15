@@ -1,8 +1,8 @@
-import React from "react";
+import React,{memo} from "react";
 import styles from "./Avatar.module.css";
 import { ImageProp } from "../../../Interfaces/ImageProp";
 
-const Avatar: React.FC<ImageProp> = ({src, alt,size}) => {
+const Avatar: React.FC<ImageProp> = memo(({src, alt,size}) => {
     return (
         <div className={`${styles.avatar} ${styles["avatar--"+size]} ${styles["avatar__img--"+size]}`}>
             <picture>
@@ -10,6 +10,6 @@ const Avatar: React.FC<ImageProp> = ({src, alt,size}) => {
             </picture>
         </div>
     )
-}
+})
   
 export default Avatar;
