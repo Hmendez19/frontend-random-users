@@ -5,6 +5,7 @@
 .table {
     border-collapse: collapse;
     margin: 50px auto;
+    min-width: 60%;
 }
 
 .table--hover tbody tr:hover {
