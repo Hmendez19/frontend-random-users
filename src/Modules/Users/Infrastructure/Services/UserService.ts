@@ -13,7 +13,7 @@ export class UserService{
         return GetAllUsers(this.userRepository);
     }
 
-    DeleteUser(userId:string):boolean|null{
+    DeleteUser(userId:string):User[]|[]{
         return DeleteUser(this.userRepository,userId);
     }
 
