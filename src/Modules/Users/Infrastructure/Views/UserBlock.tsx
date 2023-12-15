@@ -17,7 +17,11 @@ const UserBlock:React.FC<{render:(data:User[])=>JSX.Element}> = ({render}) => {
                     users: data
                 })
             }catch(err){
-                console.error(err);
+                swal("No se pudo extraer la información del sitio", {
+                    icon: "error",
+                    timer:1800,
+                    buttons: false
+                  });
             }
             finally{
                 setIsLoading(false);
