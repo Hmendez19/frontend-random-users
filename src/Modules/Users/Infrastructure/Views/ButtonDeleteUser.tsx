@@ -16,7 +16,7 @@ const ButtonDeleteUser:React.FC<{user:UserEntity}>=({user})=>{
     const OnDeleteUser = (e:React.MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault();
         swal({
-            title: "Confirmacion",
+            title: "Confirmación",
             text: `¿Está seguro de eliminar a ${user.firstName} ${user.lastName}?`,
             icon: "warning",
             buttons: ["Cancelar", "Aceptar"],
@@ -24,13 +24,23 @@ const ButtonDeleteUser:React.FC<{user:UserEntity}>=({user})=>{
           })
           .then((willDelete) => {
             if (willDelete) {
-              updateGlobalState({
-                users: userService.DeleteUser(user.id)
-              })
-              swal("¡El usuario fue eliminado exitosamente!", {
-                icon: "success"
-              });
+              try{
+                updateGlobalState({
+                  users: userService.DeleteUser(user.id)
+                })
+                swal("¡El usuario fue eliminado exitosamente!", {
+                  icon: "success"
+                });
+              }catch(errorEx){
+                throw new Error(errorEx?.message||'Ocurrió un error al eliminar el usuario');
+              }
             } 
+        }).catch((ex)=>{
+          swal(ex.message, {
+            icon: "error",
+            timer:1800,
+            buttons: false
+          });
         });
     }
    return (
